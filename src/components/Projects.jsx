@@ -11,6 +11,15 @@ const myProjects = [
     liveUrl: 'https://epic-ten-xi.vercel.app/',
     repoUrl: '#',
   },
+  {
+    id: 2,
+    title: 'Portfolio Website',
+    description: 'A personal portfolio website showcasing my projects and skills, built with React and Tailwind CSS.',
+    imageUrl: 'portfolio.webp',
+    tags: ['React', 'Tailwind CSS', 'Vite'],
+    liveUrl: 'https://portfolio-website-tau-six-41.vercel.app/',
+    repoUrl: 'https://github.com/athulkrishnapofficial-beep/portfolio-website',
+  },
 ];
 
 const Projects = () => {
