@@ -2,11 +2,12 @@
 
 This repository contains the source code for my personal portfolio website, built to showcase my skills, projects, and professional experience as a full-stack web developer.
 
-[**Live Demo**](https://athulkrishnapofficial-beep.github.io/portfolio-website/) ---
+[**Live Demo**](https://athulkrishnapofficial-beep.github.io/portfolio-website/) 
 
 ## 📸 Preview
 
-``
+![Screenshot 2025-10-30 133833](https://github.com/user-attachments/assets/58fe34cf-06cf-44c3-9b30-740f5a87a9c1)
+
 
 ## 🚀 Features
 
