@@ -1,95 +1,127 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  // Replace this with your actual Formspree endpoint
-  const FORM_ENDPOINT = "https://formspree.io/f/YOUR_UNIQUE_ID";
+  const form = useRef();
+  const [isSending, setIsSending] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    emailjs
+      .sendForm(
+        "service_cn9e2qr", // Replace with your actual EmailJS Service ID
+        "template_wyfwg9c", // Replace with your EmailJS Template ID
+        form.current,
+        "Yg0yzLUtfkoG55PUA" // Replace with your EmailJS Public Key
+      )
+      .then(
+        () => {
+          setStatusMessage("✅ Message sent successfully!");
+          form.current.reset();
+          setIsSending(false);
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          setStatusMessage("❌ Failed to send. Please try again later.");
+          setIsSending(false);
+        }
+      );
+  };
 
   return (
-    <section className="relative w-full py-20 bg-gradient-to-b border-sky-700/20 via-sky-950/30 border-sky-700/20 text-white overflow-hidden">
-      {/* Decorative glowing background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.15),transparent_60%)]" />
+    <section
+      id="contact"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-gradient-to-br from-[#041b2d] via-[#072c42] to-[#0b3b57] text-gray-100 rounded-3xl border border-sky-700/20"
+    >
+      <h2 className="text-4xl md:text-5xl font-extrabold text-sky-300 mb-10">
+        Get In Touch
+      </h2>
 
-      {/* Section Heading */}
-      <div className="flex flex-col items-center mb-16 text-center">
-        <h2 className="text-5xl font-extrabold text-sky-300 tracking-wide drop-shadow-[0_0_25px_rgba(56,189,248,0.6)] animate-pulse">
-          Get In Touch
-        </h2>
-        <p className="text-sky-200/80 mt-4 max-w-2xl">
-          Have a question or want to work together? Let’s connect and make something amazing!
+      <div className="w-full max-w-xl bg-[#0d2133]/70 p-8 rounded-2xl shadow-lg border border-sky-700/20 backdrop-blur-md">
+        <p className="text-lg text-gray-300 text-center mb-6">
+          Have a question or want to collaborate? Drop me a message!
         </p>
-      </div>
 
-      {/* Contact Form Container */}
-      <div className="w-full max-w-lg mx-auto bg-gray-900/60 backdrop-blur-xl border border-sky-500/20 p-10 rounded-2xl shadow-[0_0_25px_rgba(56,189,248,0.2)] hover:shadow-[0_0_35px_rgba(56,189,248,0.4)] transition-all duration-500">
-        <form action={FORM_ENDPOINT} method="POST" className="space-y-6">
-          {/* Name */}
+        <form ref={form} onSubmit={sendEmail} className="space-y-6">
+          {/* Name Field */}
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-sky-200 mb-2"
+              className="block text-sm font-medium text-gray-300 mb-2"
             >
               Your Name
             </label>
             <input
               type="text"
-              name="name"
               id="name"
+              name="user_name"
               required
-              className="w-full px-4 py-3 bg-gray-800/70 border border-gray-700 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-sky-400 placeholder-gray-400 transition-all"
-              placeholder="Enter your name"
+              className="w-full px-4 py-3 bg-gray-800 border border-sky-700/20 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-sky-500"
             />
           </div>
 
-          {/* Email */}
+          {/* Email Field */}
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-sky-200 mb-2"
+              className="block text-sm font-medium text-gray-300 mb-2"
             >
               Your Email
             </label>
             <input
               type="email"
-              name="email"
               id="email"
+              name="user_email"
               required
-              className="w-full px-4 py-3 bg-gray-800/70 border border-gray-700 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-sky-400 placeholder-gray-400 transition-all"
-              placeholder="you@example.com"
+              className="w-full px-4 py-3 bg-gray-800 border border-sky-700/20 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-sky-500"
             />
           </div>
 
-          {/* Message */}
+          {/* Message Field */}
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-sky-200 mb-2"
+              className="block text-sm font-medium text-gray-300 mb-2"
             >
               Your Message
             </label>
             <textarea
-              name="message"
               id="message"
+              name="message"
               rows="5"
               required
-              className="w-full px-4 py-3 bg-gray-800/70 border border-gray-700 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-sky-400 placeholder-gray-400 transition-all"
-              placeholder="Write your message..."
+              className="w-full px-4 py-3 bg-gray-800 border border-sky-700/20 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-sky-500"
             ></textarea>
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className="w-full flex justify-center items-center gap-3 px-6 py-3 bg-sky-500 text-white font-semibold rounded-lg shadow-md hover:bg-sky-400 hover:shadow-[0_0_25px_rgba(56,189,248,0.6)] active:scale-95 transition-all duration-300"
-            >
-              Send Message <FaPaperPlane className="animate-pulse" />
-            </button>
-          </div>
+          <button
+            type="submit"
+            disabled={isSending}
+            className={`w-full flex justify-center items-center gap-3 px-6 py-3 font-bold rounded-md transition-all shadow-md ${
+              isSending
+                ? "bg-sky-900 cursor-not-allowed"
+                : "bg-sky-600 hover:bg-sky-700 hover:shadow-sky-500/20"
+            }`}
+          >
+            {isSending ? "Sending..." : "Send Message"}{" "}
+            <FaPaperPlane
+              className={`${isSending ? "animate-none" : "animate-pulse"}`}
+            />
+          </button>
         </form>
-      </div>
 
-      
+        {/* Status Message */}
+        {statusMessage && (
+          <p className="text-center text-sky-300 mt-4 animate-fadeIn">
+            {statusMessage}
+          </p>
+        )}
+      </div>
     </section>
   );
 };
