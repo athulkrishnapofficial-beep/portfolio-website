@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
-
   const handleNavToggle = () => setNavIsOpen(!navIsOpen);
   const closeNav = () => setNavIsOpen(false);
 
@@ -20,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full backdrop-blur-lg bg-[#0a192f]/70 border-b border-sky-500/20 z-50 shadow-[0_0_15px_-5px_rgba(56,189,248,0.3)]">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* === Logo / Brand === */}
+        {/* === Logo === */}
         <motion.a
           href="#home"
           className="text-2xl font-extrabold text-sky-400 tracking-wide hover:text-white transition-colors"
@@ -31,7 +30,7 @@ const Navbar = () => {
           Athul<span className="text-white">Krishna</span>
         </motion.a>
 
-        {/* === Desktop Nav Links === */}
+        {/* === Desktop Links === */}
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link, index) => (
             <motion.a
@@ -43,7 +42,6 @@ const Navbar = () => {
               transition={{ delay: 0.1 * index }}
             >
               {link.title}
-              {/* Hover underline animation */}
               <motion.span
                 className="absolute bottom-0 left-0 w-0 h-[2px] bg-sky-400 rounded-full"
                 whileHover={{ width: "100%" }}
@@ -53,7 +51,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* === Mobile Menu Toggle === */}
+        {/* === Mobile Toggle === */}
         <button
           onClick={handleNavToggle}
           className="md:hidden text-sky-400 hover:text-white transition-colors"
@@ -63,7 +61,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* === Mobile Menu (Animated) === */}
+      {/* === Mobile Menu === */}
       <AnimatePresence>
         {navIsOpen && (
           <motion.div

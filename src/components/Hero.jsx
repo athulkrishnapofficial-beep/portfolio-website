@@ -21,11 +21,14 @@ const Hero = () => {
   const glowY = useTransform(mouseY, (y) => y - window.innerHeight / 2);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a192f] via-[#0f2742] to-[#102a43] overflow-hidden">
-      {/* === Mouse Glow Effect (White Glow) === */}
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a192f] via-[#0f2742] to-[#102a43] overflow-hidden pt-28 md:pt-32"
+    >
+      {/* === Mouse Glow Effect === */}
       {isClient && (
         <motion.div
-          className="pointer-events-none absolute w-[500px] h-[500px] rounded-full bg-white/20 blur-3xl"
+          className="pointer-events-none absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full bg-white/20 blur-3xl"
           style={{
             translateX: glowX,
             translateY: glowY,
@@ -37,20 +40,21 @@ const Hero = () => {
       {/* === Subtle Background Highlight === */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-400/10 via-transparent to-transparent blur-3xl"></div>
 
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12 z-10">
+      {/* === Main Content === */}
+      <div className="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between gap-10 z-10 text-center md:text-left">
         {/* === Left Column === */}
         <motion.div
-          className="md:w-1/2 text-center md:text-left"
+          className="w-full md:w-1/2"
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
             Hi, I'm <span className="text-sky-400">Athul Krishna</span>
           </h1>
 
           <motion.h2
-            className="text-2xl md:text-3xl font-semibold text-gray-300 mb-6"
+            className="text-2xl sm:text-3xl font-semibold text-gray-300 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -59,7 +63,7 @@ const Hero = () => {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-400 mb-8 max-w-md mx-auto md:mx-0"
+            className="text-base sm:text-lg text-gray-400 mb-8 max-w-md mx-auto md:mx-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
@@ -70,7 +74,7 @@ const Hero = () => {
 
           {/* === Buttons === */}
           <motion.div
-            className="flex justify-center md:justify-start space-x-4"
+            className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 sm:space-x-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -89,7 +93,7 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* === Social Icons Below Buttons === */}
+          {/* === Social Icons === */}
           <motion.div
             className="flex justify-center md:justify-start gap-6 mt-8"
             initial={{ opacity: 0, y: 20 }}
@@ -123,15 +127,15 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* === Right Column: Floating Profile Image === */}
+        {/* === Right Column (Profile Image) === */}
         <motion.div
-          className="md:w-1/2 flex justify-center mt-12 md:mt-0"
+          className="w-full md:w-1/2 flex justify-center"
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
           <motion.div
-            className="relative w-64 h-64 md:w-96 md:h-96 rounded-full overflow-hidden shadow-[0_0_60px_-15px_rgba(56,189,248,0.6)] border-4 border-sky-400"
+            className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-96 md:h-96 rounded-full overflow-hidden shadow-[0_0_60px_-15px_rgba(56,189,248,0.6)] border-4 border-sky-400"
             animate={{ y: [0, -10, 0] }}
             transition={{
               repeat: Infinity,
@@ -157,4 +161,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
