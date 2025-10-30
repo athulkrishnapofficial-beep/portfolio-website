@@ -1,16 +1,68 @@
-# React + Vite
+# Athul Krishna - Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for my personal portfolio website, built to showcase my skills, projects, and professional experience as a full-stack web developer.
 
-Currently, two official plugins are available:
+[**Live Demo**](https://athulkrishnapofficial-beep.github.io/portfolio-website/) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Preview
 
-## React Compiler
+![Screenshot 2025-10-30 133833](https://github.com/user-attachments/assets/58fe34cf-06cf-44c3-9b30-740f5a87a9c1)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Modern UI:** A clean, minimal, and fully responsive design built with **Tailwind CSS**.
+* **Interactive Components:** Smooth animations and interactive elements built with **React**.
+* **Project Showcase:** A dedicated section to display my featured projects with links, descriptions, and tech stacks.
+* **Skills & Experience:** A breakdown of my technical skills and professional journey.
+* **Contact Form:** A functional contact form (likely powered by a backend service like Firebase) to handle inquiries.
+
+## 🛠️ Tech Stack
+
+This portfolio is built using my preferred, modern web development stack:
+
+* **Frontend:** [React.js](https://reactjs.org/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Routing:** [React Router](https://reactrouter.com/)
+* **Deployment:** [GitHub Pages](https://pages.github.com/), [Vercel](https://vercel.com/), or [Netlify](https://www.netlify.com/)
+
+## 📦 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+* Node.js (v18 or newer)
+* `npm` or `yarn` package manager
+
+### Installation
+
+1.  **Clone the repository:**
+    ```sh
+    git clone [https://github.com/athulkrishnapofficial-beep/portfolio-website.git](https://github.com/athulkrishnapofficial-beep/portfolio-website.git)
+    cd portfolio-website
+    ```
+
+2.  **Install dependencies:**
+    ```sh
+    npm install
+    ```
+
+3.  **Run the development server:**
+    ```sh
+    npm run dev
+    ```
+
+    The application will be running on `http://localhost:5173` (or the next available port).
+
+## 👤 Author
+
+**Athul Krishna**
+* **GitHub:** [@athulkrishnapofficial-beep](https://github.com/athulkrishnapofficial-beep)
+* **LinkedIn:** [Your LinkedIn URL](https://www.linkedin.com/in/athulkrishnap)
+* **Website:** [Athul krishna](https://portfolio-website-tau-six-41.vercel.app/)
+
+---
+
+Would you like me to help you set up the GitHub Actions workflow to automatically deploy this to GitHub Pages?
