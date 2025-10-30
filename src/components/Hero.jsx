@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 
 const Hero = () => {
   const mouseX = useMotionValue(0);
@@ -21,7 +22,6 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a192f] via-[#0f2742] to-[#102a43] overflow-hidden">
-      
       {/* === Mouse Glow Effect (White Glow) === */}
       {isClient && (
         <motion.div
@@ -38,7 +38,6 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-400/10 via-transparent to-transparent blur-3xl"></div>
 
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12 z-10">
-
         {/* === Left Column === */}
         <motion.div
           className="md:w-1/2 text-center md:text-left"
@@ -47,8 +46,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
         >
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
-            Hi, I'm{" "}
-            <span className="text-sky-400">Athul Krishna</span>
+            Hi, I'm <span className="text-sky-400">Athul Krishna</span>
           </h1>
 
           <motion.h2
@@ -88,6 +86,39 @@ const Hero = () => {
               className="px-6 py-3 rounded-full bg-gray-800 text-white font-semibold text-lg shadow-lg hover:bg-sky-400 hover:text-black hover:scale-105 transition-all duration-300"
             >
               Get In Touch
+            </a>
+          </motion.div>
+
+          {/* === Social Icons Below Buttons === */}
+          <motion.div
+            className="flex justify-center md:justify-start gap-6 mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            <a
+              href="https://www.linkedin.com/in/athulkrishnap"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-400 hover:text-white text-3xl transition-all duration-300 hover:scale-110"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://github.com/athulkrishnapofficial-beep/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-400 hover:text-white text-3xl transition-all duration-300 hover:scale-110"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.instagram.com/athul_krishnap27/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-400 hover:text-white text-3xl transition-all duration-300 hover:scale-110"
+            >
+              <FaInstagram />
             </a>
           </motion.div>
         </motion.div>

@@ -14,6 +14,7 @@ const ProjectCard = ({ project }) => {
         <img
           src={project.imageUrl}
           alt={`${project.title} screenshot`}
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
         />
       </div>

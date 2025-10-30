@@ -20,6 +20,7 @@ const CertificateCard = ({ cert }) => {
         <motion.img
           src={cert.imageUrl}
           alt={cert.title}
+          loading="lazy"
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
           whileHover={{ scale: 1.08 }}
         />
