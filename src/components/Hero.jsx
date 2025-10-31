@@ -23,7 +23,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a192f] via-[#0f2742] to-[#102a43] overflow-hidden pt-28 md:pt-32"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0a192f] via-[#0f2742] border-sky-700/20 overflow-hidden pt-28 md:pt-32"
     >
       {/* === Mouse Glow Effect === */}
       {isClient && (
